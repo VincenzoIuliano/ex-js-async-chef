@@ -23,8 +23,9 @@ async function getChefBirthday(id) {
     if(chef.message){
         throw new Error(`Chef con id: ${recipe.userId} non trovato`);
     }
-        
-    return chef.birthDate; 
+    
+    const newDate = dayjs(chef.birthDate).format('DD/MM/YYYY')
+    return newDate; 
 }
 
 (async() => {
